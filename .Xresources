@@ -1,0 +1,91 @@
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+URxvt.font:     xft:bitstream vera sans mono:size=14:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=14:antialias=true
+
+! special
+*.foreground:   #c7ccd1
+*.background:   #1c2023
+*.cursorColor:  #c7ccd1
+
+! black
+*.color0:       #1c2023
+*.color8:       #747c84
+
+! red
+*.color1:       #c7ae95
+*.color9:       #c7ae95
+
+! green
+*.color2:       #95c7ae
+*.color10:      #95c7ae
+
+! yellow
+*.color3:       #aec795
+*.color11:      #aec795
+
+! blue
+*.color4:       #ae95c7
+*.color12:      #ae95c7
+
+! magenta
+*.color5:       #c795ae
+*.color13:      #c795ae
+
+! cyan
+*.color6:       #95aec7
+*.color14:      #95aec7
+
+! white
+*.color7:       #c7ccd1
+*.color15:      #f3f4f5
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.loginShell:           true
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+Rxvt*shading: 15
+
+URxvt*saveLines: 12000
+
+URxvt*foreground: #657b83
+URxvt*background: [90]#002b36
+
+URxvt.cursorColor: magenta
+
+URxvt*font: xft:Iosevka:pixelsize=15
+URxvt*boldFont: xft:Iosevka:bold:pixelsize=15
+
+URxvt*scrollBar: true
+URxvt*scrollBar_right: false
+URxvt*scrollstyle: plain
+
+!! Zoom in and out
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select,font-size
+URxvt.clipboard.autocopy: true           
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xsel
+URxvt.keysym.Shift-Control-P: eval:paste_clipboard
+URxvt.keysym.Shift-Control-Y: eval:selection_to_clipboard
+! URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+! URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.underlineURLs: true
+URxvt.colorUL: #4682B4
+URxvt.urlButton: 1
+URxvt.keyboard-select.clipboard: true
