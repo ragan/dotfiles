@@ -104,6 +104,7 @@ export PATH=$PATH:~/go/bin
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias rr='ranger'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
