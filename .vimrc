@@ -25,6 +25,8 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
 map <C-n> :NERDTreeToggle<CR>
 
+let NERDTreeShowHidden = 1
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
