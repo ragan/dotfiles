@@ -17,6 +17,8 @@ call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 
+Plug 'rhysd/vim-clang-format'
+
 Plug 'preservim/nerdcommenter'
 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
