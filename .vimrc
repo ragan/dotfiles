@@ -6,6 +6,8 @@ set smartcase
 
 set relativenumber number
 
+set colorcolumn=80
+
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
