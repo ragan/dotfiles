@@ -106,7 +106,7 @@ export PATH=$PATH:~/go/bin
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rr='ranger'
 
-eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/dracula.omp.json)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
