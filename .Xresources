@@ -4,8 +4,8 @@ Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
-URxvt.font:     xft:bitstream vera sans mono:size=14:antialias=true
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=14:antialias=true
+URxvt.font:     xft:DejaVuSansMono\ Nerd\ Font\ \Mono:size=14:antialias=true
+URxvt.boldFont: xft:DejaVuSansMono\ Nerd\ Font\ \Mono:bold:size=14:antialias=true
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
