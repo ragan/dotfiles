@@ -1,4 +1,6 @@
-colorscheme monokai
+packadd! dracula
+syntax enable
+colorscheme dracula
 
 set incsearch
 set hlsearch
@@ -34,6 +36,9 @@ Plug 'junegunn/fzf.vim'
 
 map <silent><nowait>gff :Files<CR>
 map <c-s-f> :Rg<CR>
+
+nmap <silent>gt :Tags<CR>
+nmap <silent>gbt :BTags<CR>
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
