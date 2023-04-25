@@ -21,12 +21,9 @@ Rxvt*shading: 15
 URxvt*saveLines: 12000
 
 URxvt*foreground: #657b83
-URxvt*background: [90]#002b36
+URxvt*background: [80]#002b36
 
 URxvt.cursorColor: #FF79C6
-
-URxvt*font: xft:Iosevka:pixelsize=15
-URxvt*boldFont: xft:Iosevka:bold:pixelsize=15
 
 URxvt*scrollBar: true
 URxvt*scrollBar_right: false
