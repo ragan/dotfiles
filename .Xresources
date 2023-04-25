@@ -21,7 +21,7 @@ Rxvt*shading: 15
 URxvt*saveLines: 12000
 
 URxvt*foreground: #657b83
-URxvt*background: [80]#002b36
+URxvt*background: #002b36
 
 URxvt.cursorColor: #FF79C6
 
