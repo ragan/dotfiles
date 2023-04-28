@@ -1,4 +1,4 @@
-#include ".Xresources.d/xresources/Xresources"
+#include ".Xresources.d/Xresources"
 
 Xft.dpi:                    96
 Xft.antialias:              true
