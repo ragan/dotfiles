@@ -4,3 +4,6 @@
 [submodule "dwmblocks"]
 	path = dwmblocks
 	url = git@github.com:ragan/dwmblocks.git
+[submodule "st"]
+	path = st
+	url = git@github.com:ragan/st.git
