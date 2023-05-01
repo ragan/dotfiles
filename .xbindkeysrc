@@ -65,6 +65,9 @@
 "dmenukaomoji ~/dotfiles/kaomoji"
    control+shift+p
 
+"flameshot gui"
+   Mod4+shift+s
+
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
 #
