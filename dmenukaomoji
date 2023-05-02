@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sel=$(cat $1 | dmenu -i -l 30 | sed -e "s/ -- .*//g")
+
+[ -z "$sel" ] && exit
+
+#echo "$sel"
+
+#xdotool type --delay 200 "$sel"
+
+echo "$sel" | xclip -selection c
