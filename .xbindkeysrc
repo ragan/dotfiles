@@ -63,7 +63,7 @@
    XF86AudioMicMute
 
 "dmenukaomoji ~/dotfiles/kaomoji"
-   control+shift+p
+   Mod4+shift+p
 
 "flameshot gui"
    Mod4+shift+s
