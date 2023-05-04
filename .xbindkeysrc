@@ -63,10 +63,16 @@
    XF86AudioMicMute
 
 "dmenukaomoji ~/dotfiles/kaomoji"
-   Mod4+shift+p
+   Mod4+shift+k
 
 "flameshot gui"
    Mod4+shift+s
+
+"autorandr -c"
+   Mod4+p
+
+"autorandr --cycle"
+   Mod4+shift+p
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
