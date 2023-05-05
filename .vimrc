@@ -1,14 +1,15 @@
-packadd! dracula
-syntax enable
-colorscheme dracula
-
+set smartcase
+set ignorecase
 set incsearch
 set hlsearch
-set smartcase
 
 set relativenumber number
 
 set colorcolumn=80
+
+packadd! dracula
+syntax enable
+colorscheme dracula
 
 call plug#begin()
 " The default plugin directory will be as follows:
