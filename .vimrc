@@ -3,6 +3,9 @@ set ignorecase
 set incsearch
 set hlsearch
 
+set autoread
+set noswapfile
+
 set relativenumber number
 
 set colorcolumn=80
