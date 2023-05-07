@@ -77,7 +77,7 @@ export FZF_BASE='~/.fzf'
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:~/go/bin
+export PATH=$PATH:~/go/bin:$HOME/.local/bin
 
 # User configuration
 
