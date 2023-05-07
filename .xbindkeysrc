@@ -50,13 +50,13 @@
 "xterm"
   control + b:2
 
-"pactl set-sink-volume @DEFAULT_SINK@ +10%"
+"pactl set-sink-volume @DEFAULT_SINK@ +10%; pkill -RTMIN+10 dwmblocks"
    XF86AudioRaiseVolume
 
-"pactl set-sink-volume @DEFAULT_SINK@ -10%"
+"pactl set-sink-volume @DEFAULT_SINK@ -10%; pkill -RTMIN+10 dwmblocks"
    XF86AudioLowerVolume
 
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 dwmblocks"
    XF86AudioMute
 
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
