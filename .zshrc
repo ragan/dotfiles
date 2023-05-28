@@ -71,7 +71,7 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf web-search wd archlinux)
+plugins=(git fzf web-search wd archlinux isodate)
 
 export FZF_BASE='~/.fzf'
 
