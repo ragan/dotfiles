@@ -10,6 +10,10 @@ set relativenumber number
 
 set colorcolumn=80
 
+"https://stackoverflow.com/questions/6488683/how-to-change-the-cursor-between-normal-and-insert-modes-in-vim
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
 augroup remember_folds
   autocmd!
   autocmd BufWinLeave * silent! mkview
