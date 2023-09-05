@@ -74,6 +74,18 @@
 "autorandr --cycle"
    Mod4+shift+p
 
+"xdotool mousemove_relative 0 -200"
+   Mod4+w
+
+"xdotool mousemove_relative 0 200"
+   Mod4+s
+
+"xdotool mousemove_relative 200 0"
+   Mod4+d
+
+"xdotool mousemove_relative -- -200 0"
+   Mod4+a
+
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
 #

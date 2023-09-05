@@ -10,9 +10,24 @@ set relativenumber number
 
 set colorcolumn=80
 
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * silent! mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+
 packadd! dracula
-syntax enable
-colorscheme dracula
+
+" Persistent undo from https://stackoverflow.com/questions/2732267/vim-loses-undo-history-when-changing-buffers
+set undofile
+set undodir=$HOME/.vim/undo
+
+set undolevels=1000
+set undoreload=10000
+
+set hidden
+nnoremap <C-j> :tabnext<CR>
+nnoremap <C-k> :tabprev<CR>
 
 call plug#begin()
 " The default plugin directory will be as follows:
@@ -24,6 +39,9 @@ call plug#begin()
 "   - Avoid using standard Vim directory names like 'plugin'
 
 Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+
+"Plug 'tpope/vim-fugitive'
 
 Plug 'rhysd/vim-clang-format'
 
@@ -32,6 +50,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
 map <C-n> :NERDTreeToggle<CR>
+map <C-p> :NERDTree %<CR>
 
 let NERDTreeShowHidden = 1
 
@@ -84,6 +103,16 @@ Plug 'buoto/gotests-vim'
 
 Plug 'sebdah/vim-delve'
 
+"Plug 'eliba2/vim-node-inspect'
+"
+"nnoremap <silent><F4> :NodeInspectStart<cr>
+"nnoremap <silent><F5> :NodeInspectRun<cr>
+"nnoremap <silent><F6> :NodeInspectConnect("127.0.0.1:9229")<cr>
+"nnoremap <silent><F7> :NodeInspectStepInto<cr>
+"nnoremap <silent><F8> :NodeInspectStepOver<cr>
+"nnoremap <silent><F9> :NodeInspectToggleBreakpoint<cr>
+"nnoremap <silent><F10> :NodeInspectStop<cr>
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -92,3 +121,5 @@ call plug#end()
 "   syntax off            " Disable syntax highlighting
 
 
+syntax enable
+colorscheme dracula

@@ -71,7 +71,7 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf web-search wd archlinux isodate)
+plugins=(git fzf web-search wd archlinux isodate urltools)
 
 export FZF_BASE='~/.fzf'
 
@@ -107,6 +107,9 @@ export PATH=$PATH:~/go/bin:$HOME/.local/bin
 alias rr='ranger'
 
 eval "$(oh-my-posh init zsh --config ~/.poshthemes/dracula.omp.json)"
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
