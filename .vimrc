@@ -107,6 +107,11 @@ Plug 'buoto/gotests-vim'
 
 Plug 'sebdah/vim-delve'
 
+Plug 'voldikss/vim-floaterm'
+
+let g:floaterm_keymap_toggle = '<Leader>tt'
+let g:floaterm_width = 0.9
+
 "Plug 'eliba2/vim-node-inspect'
 "
 "nnoremap <silent><F4> :NodeInspectStart<cr>
