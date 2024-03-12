@@ -2,6 +2,7 @@ set smartcase
 set ignorecase
 set incsearch
 set hlsearch
+set showcmd
 
 set autoread
 set noswapfile
@@ -45,7 +46,7 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 Plug 'rhysd/vim-clang-format'
 
