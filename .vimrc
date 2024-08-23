@@ -43,6 +43,8 @@ call plug#begin()
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 "   - Avoid using standard Vim directory names like 'plugin'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+
 Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 
@@ -53,6 +55,12 @@ Plug 'rhysd/vim-clang-format'
 Plug 'preservim/nerdcommenter'
 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
+Plug  'weirongxu/plantuml-previewer.vim'
+
+Plug  'tyru/open-browser.vim'
+
+Plug  'aklt/plantuml-syntax'
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-p> :NERDTree %<CR>
