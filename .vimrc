@@ -21,7 +21,6 @@ augroup remember_folds
   autocmd BufWinEnter * silent! loadview
 augroup END
 
-packadd! dracula
 
 " Persistent undo from https://stackoverflow.com/questions/2732267/vim-loses-undo-history-when-changing-buffers
 set undofile
@@ -61,6 +60,12 @@ Plug  'weirongxu/plantuml-previewer.vim'
 Plug  'tyru/open-browser.vim'
 
 Plug  'aklt/plantuml-syntax'
+
+if v:version < 802
+    packadd! dracula
+endif
+syntax enable
+colorscheme dracula
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-p> :NERDTree %<CR>
@@ -140,4 +145,3 @@ call plug#end()
 
 
 syntax enable
-colorscheme dracula
