@@ -33,4 +33,7 @@ return {
 			vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 		end
 	},
+	{
+		"simrat39/rust-tools.nvim",
+	}
 }
