@@ -1,3 +1,5 @@
+vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree left<CR>', { noremap = true, silent = true })
+
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
