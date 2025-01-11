@@ -1,3 +1,7 @@
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
 set-window-option -g automatic-rename off
 
 # split panes using | and -
