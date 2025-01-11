@@ -25,9 +25,9 @@ To use these dotfiles, clone the repository to your home directory and create sy
    git clone <repository-url> ~/dotfiles
    ```
 
-2. Create symbolic links for the configuration files:
+2. Create symbolic links for the configuration files or entire directories:
    ```bash
-   ln -s ~/dotfiles/.config/nvim/init.lua ~/.config/nvim/init.lua
+   ln -sf ~/dotfiles/.config/nvim ~/.config/nvim
    # Repeat for other configuration files as needed
    ```
 
