@@ -1,1 +1,11 @@
+vim.cmd("set smartcase")
+vim.cmd("set ignorecase")
+vim.cmd("set incsearch")
+vim.cmd("set hlsearch")
+vim.cmd("set showcmd")
+vim.cmd("set autoread")
+vim.cmd("set noswapfile")
+vim.cmd("set relativenumber number")
+vim.cmd("set colorcolumn=80")
+
 require("config.lazy")
