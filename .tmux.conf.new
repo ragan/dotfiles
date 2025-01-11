@@ -1,8 +1,8 @@
 set-window-option -g automatic-rename off
 
 # split panes using | and -
-bind | split-window -h
-bind - split-window -v
+bind h split-window -h
+bind v split-window -v
 unbind '"'
 unbind %
 
