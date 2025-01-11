@@ -25,10 +25,11 @@ To use these dotfiles, clone the repository to your home directory and create sy
    git clone <repository-url> ~/dotfiles
    ```
 
-2. Create symbolic links for the configuration files or entire directories:
+2. Use GNU Stow to manage your dotfiles:
    ```bash
-   ln -sf ~/dotfiles/.config/nvim ~/.config/nvim
-   # Repeat for other configuration files as needed
+   cd ~/dotfiles
+   stow nvim
+   # Repeat for other directories as needed
    ```
 
 3. Install any necessary plugins or dependencies as specified in the configuration files.
