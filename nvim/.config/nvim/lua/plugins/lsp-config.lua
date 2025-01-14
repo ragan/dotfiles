@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup( {
-				ensure_installed = { "lua_ls", "rust_analyzer", "gopls" },
+				ensure_installed = { "lua_ls", "rust_analyzer", "gopls", "pyright" },
 			})
 		end
 	},
@@ -20,6 +20,9 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({})
 			lspconfig.gopls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.pyright.setup({
 				capabilities = capabilities,
 			})
 			local bufopts = { noremap=true, silent=true, buffer=bufnr }
