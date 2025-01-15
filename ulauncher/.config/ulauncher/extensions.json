@@ -1,1 +1,16 @@
-{}
+{
+    "com.github.ulauncher.ulauncher-timer": {
+        "id": "com.github.ulauncher.ulauncher-timer",
+        "url": "https://github.com/ulauncher/ulauncher-timer",
+        "updated_at": "2025-01-15T18:15:25.555899",
+        "last_commit": "2d3fe82fe1e38670e6eb8887cd2a4b4d1c2baa79",
+        "last_commit_time": "2023-03-25T08:07:41"
+    },
+    "com.github.brpaz.ulauncher-devdocs": {
+        "id": "com.github.brpaz.ulauncher-devdocs",
+        "url": "https://github.com/brpaz/ulauncher-devdocs",
+        "updated_at": "2025-01-15T18:19:42.208724",
+        "last_commit": "491bb5a5ccef082c5f6623db5f5676a8ab481144",
+        "last_commit_time": "2022-04-03T10:50:15"
+    }
+}
