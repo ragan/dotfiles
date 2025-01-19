@@ -1,0 +1,28 @@
+[/]
+custom-list=['custom0']
+looking-glass-keybinding=['<Primary><Shift><Alt>greater']
+
+[custom-keybindings/custom0]
+binding=['<Super>Return']
+command='alacritty -e tmux'
+name='Alacritty'
+
+[media-keys]
+terminal=@as []
+
+[wm]
+maximize=['<Shift><Super>m']
+move-to-monitor-down=['<Shift><Super>j']
+move-to-monitor-left=['<Shift><Super>h']
+move-to-monitor-right=['<Shift><Super>l']
+move-to-monitor-up=['<Shift><Super>k']
+move-to-side-e=@as []
+move-to-side-n=@as []
+move-to-side-s=@as []
+move-to-side-w=@as []
+push-tile-down=['<Super>j']
+push-tile-left=['<Super>h']
+push-tile-right=['<Super>l']
+push-tile-up=['<Super>k']
+toggle-maximized=['<Super>m']
+unmaximize=@as []
