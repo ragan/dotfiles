@@ -6,6 +6,7 @@ This repository contains configuration files and scripts to set up and customize
 
 - **.config/nvim/init.lua**: This file is the entry point for Neovim configuration, loading additional settings and plugins.
 - **dwm**: This directory contains the source code and configuration for the DWM window manager.
+- **Makefile**: Automates tasks such as dumping and loading dconf keybindings.
 - **Other configuration files**: Various other configuration files for tools like tmux, zsh, and more are included to customize your environment.
 
 ## Getting Started
@@ -16,33 +17,9 @@ To use these dotfiles, clone the repository to your home directory and create sy
 
 - **Neovim**: Ensure Neovim is installed to use the provided configuration.
 - **DWM**: Install DWM if you want to use the window manager configuration.
+- **GNU Stow**: For managing symbolic links of configuration files.
 - **Other tools**: Install any other tools you plan to use with these configurations.
 
 ### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone <repository-url> ~/dotfiles
-   ```
-
-2. Use GNU Stow to manage your dotfiles:
-   ```bash
-   cd ~/dotfiles
-   stow nvim
-   # Repeat for other directories as needed
-   ```
-
-3. Install any necessary plugins or dependencies as specified in the configuration files.
-
-## Usage
-
-- **Neovim**: Launch Neovim to start using the custom configuration.
-- **DWM**: Start DWM to use the window manager with the provided settings.
-
-## Contributing
-
-Feel free to contribute to this repository by submitting pull requests or opening issues for any bugs or feature requests.
-
-## License
-
-This repository is licensed under the MIT License. See the LICENSE file for more details.
