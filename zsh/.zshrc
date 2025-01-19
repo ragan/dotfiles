@@ -73,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/go/bin:$HOME/.local/bin
 
-export BROWSER=$(which firefox)
+# export BROWSER=$(which firefox)
 
 # User configuration
 
