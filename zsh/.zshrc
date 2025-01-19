@@ -73,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/go/bin:$HOME/.local/bin
 
-export BROWSER=/usr/bin/firefox
+export BROWSER=$(which firefox)
 
 # User configuration
 
@@ -101,8 +101,7 @@ export BROWSER=/usr/bin/firefox
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rr='ranger'
-
-eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh init zsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin.omp.json)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
