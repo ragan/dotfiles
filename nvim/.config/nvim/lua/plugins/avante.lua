@@ -6,11 +6,19 @@ return {
 		lazy = false,
 		version = "*", -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
 		opts = {
-			provider = "openai",
-			auto_suggestions_provider = "openai",
+			provider = "claude",
+			auto_suggestions_provider = "claude",
 			behaviour = {
 				auto_suggestions = true
-			}
+			},
+			api_key = function()
+				local key = os.getenv("ANTHROPIC_API_KEY")
+				if not key then
+					vim.notify("ANTHROPIC_API_KEY environment variable not found", vim.log.levels.ERROR)
+					return nil
+				end
+				return key
+			end
 		},
 		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 		build = "make",
