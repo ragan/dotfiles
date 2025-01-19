@@ -5,6 +5,8 @@
 
 # To subscribe to a feed, you have to add a line with its URL:
 https://news.ycombinator.com/rss
+https://www.pepper.pl/rss/nowe
+https://kbd.news/rss2.php
 
 # If you want to assign a custom name to the feed,
 # put a double quoted string after its URL:
