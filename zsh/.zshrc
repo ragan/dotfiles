@@ -103,6 +103,7 @@ export PATH=$PATH:~/go/bin:$HOME/.local/bin
 alias rr='ranger'
 alias nv='nvim'
 alias v='nvim'
+alias nv='v'
 
 eval "$(oh-my-posh init zsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin.omp.json)"
 
