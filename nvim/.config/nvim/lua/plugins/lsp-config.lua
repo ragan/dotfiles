@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "rust_analyzer", "gopls", "pyright", "jdtls", "clangd", "zls" },
+				ensure_installed = { "lua_ls", "rust_analyzer", "gopls", "pyright", "jdtls", "clangd", "zls", "bashls" },
 			})
 		end,
 	},
@@ -34,6 +34,10 @@ return {
 			lspconfig.zls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.bashls.setup({
+				capabilities = capabilities,
+			})
+
 			local bufopts = { noremap = true, silent = true, buffer = bufnr }
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
