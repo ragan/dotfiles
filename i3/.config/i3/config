@@ -28,7 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # Dunst
- exec_always --no-startup-id dunst -config ~/.config/dunst/dunst.conf
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunst.conf
 
 exec_always "setxkbmap -layout pl"
 
