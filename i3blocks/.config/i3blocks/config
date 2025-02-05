@@ -26,20 +26,14 @@
 # Each block command defaults to the script name to avoid boilerplate.
 # Change $SCRIPT_DIR to the location of your scripts!
 command=$SCRIPT_DIR/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=10
 markup=none
 
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-
-[volume]
-label=♪
-interval=once
-signal=10
-#STEP=5%
+[volume-pipewire]
+command=$SCRIPT_DIR/volume-pipewire
+interval=persist
+SUBSCRIBE=1
+USE_ALSA_NAME=1
 
 # Memory usage
 #
@@ -76,7 +70,7 @@ interval=10
 separator=false
 
 [wifi]
-#INTERFACE=wlp3s0
+INTERFACE=wlan0
 label=wifi:
 interval=10
 separator=false
