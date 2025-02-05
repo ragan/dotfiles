@@ -199,7 +199,8 @@ bar {
 	    inactive_workspace $base  $base     $text
 	    urgent_workspace   $base  $red      $crust
 	  }
-        status_command i3status
+
+        status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 }
 
 set $rosewater #f5e0dc
