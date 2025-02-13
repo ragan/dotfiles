@@ -9,7 +9,20 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "rust_analyzer", "gopls", "pyright", "jdtls", "clangd", "zls", "bashls" },
+				ensure_installed = {
+					"lua_ls",
+					"rust_analyzer",
+					"gopls",
+					"pyright",
+					"jdtls",
+					"clangd",
+					"zls",
+					"bashls",
+					"ts_ls",
+					"eslint",
+					"html",
+					"cssls",
+				},
 			})
 		end,
 	},
@@ -21,6 +34,21 @@ return {
 			lspconfig.lua_ls.setup({})
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
+				filetypes = {
+					"go",
+					"gomod",
+					"gowork",
+					"gotmpl",
+				},
+				root_dir = lspconfig.util.root_pattern(
+					"go.work",
+					"go.mod",
+					".git"
+				),
+				settings = {
+					completeUnimported = true,
+					usePlaceholders = true,
+				},
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
@@ -35,6 +63,9 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.bashls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 
