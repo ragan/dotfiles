@@ -8,6 +8,6 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
-		vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree toggle left<CR>', { noremap = true, silent = true })
+		vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree focus left toggle reveal<CR>', { noremap = true, silent = true })
 	end
 }
