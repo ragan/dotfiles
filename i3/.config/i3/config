@@ -45,6 +45,12 @@ exec --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 30
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+#pasystray
+exec --no-startup-id pasystray
+
+#Udiskie
+exec --no-startup-id udiskie --tray
+
 exec --no-startup-id picom --experimental-backends 
 
 # FEH random background
