@@ -30,6 +30,8 @@ exec --no-startup-id dex --autostart --environment i3
 # Dunst
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunst.conf
 
+exec_always --no-startup-id autorandr --change
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -42,6 +44,8 @@ exec --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 30
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec_always thunar --daemon
+
+exec --no-startup-id picom --experimental-backends --config ~/.config/picom/picom.conf
 
 # FEH random background
 exec feh --bg-scale --randomize ~/.config/backgrounds/
