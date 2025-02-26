@@ -14,7 +14,7 @@ fi
 sed -i '/^$/d' $HOME/.todo
 
 # Pass the todo list to rofi
-chosen=`cat $HOME/.todo | rofi -dmenu | sed "s/^\s*//"`
+chosen=`cat $HOME/.todo | rofi -p todo -dmenu | sed "s/^\s*//"`
 
 # Exit if nothing is chosen
 if [ -z "$chosen" ]; then
