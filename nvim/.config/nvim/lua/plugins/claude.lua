@@ -1,6 +1,7 @@
 return {
 	{
 		"pasky/claude.vim",
+		enabled = false,
 		lazy = false,
 		config = function()
 			-- Load API key from environment variable
@@ -12,7 +13,8 @@ return {
 			end
 
 			-- Add keymaps (the default conflict with NVChad.  Skip if you want)
-			vim.keymap.set("v", "<leader>Ci", ":'<,'>ClaudeImplement ", { noremap = true, desc = "Claude Implement" })
+			vim.keymap.set("v", "<leader>Ci", ":'<,'>ClaudeImplement ",
+				{ noremap = true, desc = "Claude Implement" })
 			vim.keymap.set(
 				"n",
 				"<leader>Cc",
