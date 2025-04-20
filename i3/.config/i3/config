@@ -45,8 +45,8 @@ exec --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 30
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-#pasystray
-exec --no-startup-id pasystray
+# pasystray
+# exec --no-startup-id pasystray
 
 #Udiskie
 exec --no-startup-id udiskie --tray
@@ -80,7 +80,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty -e tmux
+bindsym $mod+Return exec ghostty 
 
 # kill focused window
 bindsym $mod+q kill
