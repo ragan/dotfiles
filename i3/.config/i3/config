@@ -38,8 +38,9 @@ exec_always --no-startup-id gtk-update-icon-cache
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 300 " i3lock --nofork" ""
+# exec --no-startup-id xidlehook --not-when-audio --not-when-fullscreen --timer 300 " i3lock --nofork" ""
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -80,7 +81,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec ghostty 
+bindsym $mod+Return exec alacritty -e tmux
 
 # kill focused window
 bindsym $mod+q kill
@@ -385,3 +386,7 @@ mode "$mode_gaps_left" {
         bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
+
+exec --no-startup-id xset s off
+exec --no-startup-id xset +dpms
+exec --no-startup-id xset dpms 10 10 10
