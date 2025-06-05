@@ -7,5 +7,6 @@ vim.cmd("set autoread")
 vim.cmd("set noswapfile")
 vim.cmd("set relativenumber number")
 vim.cmd("set colorcolumn=80")
+vim.cmd("set clipboard=unnamedplus")
 
 require("config.lazy")
