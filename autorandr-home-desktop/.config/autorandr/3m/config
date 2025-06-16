@@ -4,30 +4,26 @@ output DP-3
 off
 output DP-5
 off
+output DP-4
+off
 output DP-2
-crtc 3
+crtc 2
 mode 1920x1080
 pos 0x0
-rate 180.00
+rate 179.82
 rotate inverted
 x-prop-non_desktop 0
 output HDMI-0
 crtc 1
 mode 1920x1080
 pos 1920x0
-rate 180.00
+rate 179.82
 rotate inverted
 x-prop-non_desktop 0
 output DP-0
-crtc 2
-mode 1920x1080
-pos 0x1080
-rate 180.00
-x-prop-non_desktop 0
-output DP-4
 crtc 0
 mode 1920x1080
-pos 1920x1080
+pos 0x1080
 primary
-rate 180.00
+rate 179.82
 x-prop-non_desktop 0
