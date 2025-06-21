@@ -1,7 +1,6 @@
 ---
 - name: Deploy Open WebUI
   hosts: node
-  become: yes
 
   tasks:
   - name: Pull latest code from GitHub
