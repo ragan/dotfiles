@@ -1,9 +1,12 @@
+[Install]
+WantedBy=default.target
+
 [Unit]
 Description=Run Ansible playbook
 After=network.target
 
 [Service]
-User=your_username
-WorkingDirectory=~/.ansible
-ExecStart=ansible-playbook -i hosts deploy.yml
+User=kpeek
+WorkingDirectory=$HOME/.ansible
+ExecStart=/usr/bin/ansible-playbook -i hosts deploy.yml
 
