@@ -70,7 +70,7 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym control+Print exec flameshot full
+bindsym control+Print exec flameshot full --clipboard
 bindsym control+shift+Print exec flameshot gui
 
 # Use Mouse+$mod to drag floating windows to their wanted position
