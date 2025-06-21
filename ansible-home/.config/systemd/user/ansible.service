@@ -8,5 +8,5 @@ After=network.target
 [Service]
 User=kpeek
 WorkingDirectory=/home/kpeek/.ansible
-ExecStart=/usr/bin/ansible-playbook -i hosts deploy.yml
+ExecStart=/usr/bin/ansible-playbook -i hosts.ini deploy-open-webui.yml
 
