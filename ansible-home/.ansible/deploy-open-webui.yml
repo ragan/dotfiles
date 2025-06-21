@@ -1,0 +1,22 @@
+---
+- name: Deploy Open WebUI
+  hosts: node
+  become: yes
+
+  tasks:
+  - name: Pull latest code from GitHub
+    git:
+      repo: https://github.com/ragan/open-webui-compose.git
+      dest: ~/open-webui-compose
+      version: main
+
+  - name: Stop existing containers
+    command: docker-compose down
+    args:
+      chdir: ~/open-webui-compose
+
+  - name: Start new containers
+    command: docker-compose up -d
+    args:
+      chdir: ~/open-webui-compose
+
