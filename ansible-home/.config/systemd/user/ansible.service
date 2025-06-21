@@ -7,6 +7,6 @@ After=network.target
 
 [Service]
 User=kpeek
-WorkingDirectory=$HOME/.ansible
+WorkingDirectory=/home/kpeek/.ansible
 ExecStart=/usr/bin/ansible-playbook -i hosts deploy.yml
 
