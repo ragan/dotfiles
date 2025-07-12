@@ -118,3 +118,29 @@ export NVM_DIR="$HOME/.nvm"
 
 export TERM=vt100
 
+bkp() {
+  if [[ $# -ne 1 ]]; then
+    echo "Usage: bkp <source_file>"
+    return 1
+  fi
+
+  source=$1
+
+  if [[ ! -f "$source" ]]; then
+    echo "Error: Source file '$source' not found."
+    return 1
+  fi
+
+  base=$(basename "$source")
+  name="${base%.*}"
+  ext="${base##*.}"
+  dest="$name.bkp"
+  i=1
+
+  while [[ -f "$dest" ]]; do
+    dest="$name.bkp$i"
+    ((i++))
+  done
+
+  cp "$source" "$dest"
+}
