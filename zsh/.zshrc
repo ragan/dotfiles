@@ -75,10 +75,6 @@ export PATH=$PATH:~/go/bin:$HOME/.local/bin
 
 # export BROWSER=$(which firefox)
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -145,3 +141,8 @@ bkp() {
 aa() {
   source ./.venv/bin/activate
 }
+
+# Check if nvim is available, otherwise alias nvim to vim
+if ! command -v nvim &> /dev/null; then
+  alias nvim='vim'
+fi
