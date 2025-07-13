@@ -373,7 +373,21 @@ globalkeys = gears.table.join(
 	end, { description = "next track", group = "media" }),
 	awful.key({}, "XF86AudioPrev", function()
 		awful.util.spawn("playerctl previous")
-	end, { description = "previous track", group = "media" })
+	end, { description = "previous track", group = "media" }),
+
+	-- Volume controls
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+	end, { description = "increase volume", group = "media" }),
+	awful.key({}, "XF86AudioLowerVolume", function()
+		awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+	end, { description = "decrease volume", group = "media" }),
+	awful.key({}, "XF86AudioMute", function()
+		awful.util.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+	end, { description = "toggle mute", group = "media" }),
+	awful.key({}, "XF86AudioMicMute", function()
+		awful.util.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle")
+	end, { description = "toggle microphone mute", group = "media" })
 )
 
 clientkeys = gears.table.join(
