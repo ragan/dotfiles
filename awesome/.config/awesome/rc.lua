@@ -600,3 +600,5 @@ awful.spawn.with_shell(
 	..
 	'dex --environment Awesome --autostart --search-paths "${XDG_CONFIG_HOME:-$HOME/.config}/autostart:${XDG_CONFIG_DIRS:-/etc/xdg}/autostart";'
 )
+
+awful.spawn.with_shell("~/.fehbg")
