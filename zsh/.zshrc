@@ -144,3 +144,7 @@ bkp() {
 
   cp "$source" "$dest"
 }
+
+aa() {
+  source ./.venv/bin/activate
+}
