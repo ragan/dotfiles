@@ -359,7 +359,21 @@ globalkeys = gears.table.join(
 	end, { description = "run rofi", group = "layout" }),
 	awful.key({ altkey }, "Tab", function()
 		awful.util.spawn("rofi -show window")
-	end, { description = "run rofi", group = "layout" })
+	end, { description = "run rofi", group = "layout" }),
+
+	-- Audio controls
+	awful.key({}, "XF86AudioPlay", function()
+		awful.util.spawn("playerctl play-pause")
+	end, { description = "play/pause music", group = "media" }),
+	awful.key({}, "XF86AudioPause", function()
+		awful.util.spawn("playerctl play-pause")
+	end, { description = "play/pause music", group = "media" }),
+	awful.key({}, "XF86AudioNext", function()
+		awful.util.spawn("playerctl next")
+	end, { description = "next track", group = "media" }),
+	awful.key({}, "XF86AudioPrev", function()
+		awful.util.spawn("playerctl previous")
+	end, { description = "previous track", group = "media" })
 )
 
 clientkeys = gears.table.join(
