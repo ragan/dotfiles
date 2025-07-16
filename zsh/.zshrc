@@ -127,11 +127,11 @@ bkp() {
   base=$(basename "$source")
   name="${base%.*}"
   ext="${base##*.}"
-  dest="$name.bkp"
+  dest="$name.bkp.$ext"
   i=1
 
   while [[ -f "$dest" ]]; do
-    dest="$name.bkp$i"
+    dest="$name.bkp$i.$ext"
     ((i++))
   done
 
