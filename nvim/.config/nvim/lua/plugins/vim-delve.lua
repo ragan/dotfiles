@@ -1,0 +1,5 @@
+return {
+	{
+		"sebdah/vim-delve",
+	},
+}
