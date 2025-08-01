@@ -8,5 +8,6 @@ vim.cmd("set noswapfile")
 vim.cmd("set relativenumber number")
 vim.cmd("set colorcolumn=80")
 vim.cmd("set clipboard=unnamedplus")
+vim.cmd("set writebackup")
 
 require("config.lazy")
