@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,window,combi,filebrowser";
+    modi: "run,window,combi";
     icon-theme: "Oranchelo";
     show-icons: true;
     terminal: "kitty";
@@ -11,6 +11,11 @@ configuration{
     display-run: " Run ";
     display-window: " Window";
     sidebar-mode: true;
+    kb-element-next: "";
+    kb-element-prev: "";
+    kb-mode-next: "Tab";
+    kb-mode-previous: "Shift+Tab";
 }
+
 
 @theme "catppuccin-mocha"
