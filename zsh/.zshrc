@@ -65,7 +65,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf web-search wd archlinux isodate urltools dotenv docker-compose)
+plugins=(git fzf web-search wd archlinux isodate urltools dotenv docker-compose tmux)
 
 export FZF_BASE='~/.fzf'
 
@@ -77,6 +77,8 @@ export PATH=$PATH:~/go/bin:$HOME/.local/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -108,8 +110,6 @@ eval "$(starship init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export TERM=vt100
 
 bkp() {
   if [[ $# -ne 1 ]]; then
@@ -145,4 +145,8 @@ aa() {
 # Check if nvim is available, otherwise alias nvim to vim
 if ! command -v nvim &> /dev/null; then
   alias nvim='vim'
+fi
+
+if [ -z "$TMUX" ]; then
+  tmux attach -t main || tmux new -s main
 fi
