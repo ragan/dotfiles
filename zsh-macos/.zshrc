@@ -103,3 +103,31 @@ source $ZSH/oh-my-zsh.sh
 alias nvim="~/nvim-macos-arm64/bin/nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+
+bkp() {
+  if [[ $# -ne 1 ]]; then
+    echo "Usage: bkp <source_file>"
+    return 1
+  fi
+
+  source=$1
+
+  if [[ ! -f "$source" ]]; then
+    echo "Error: Source file '$source' not found."
+    return 1
+  fi
+
+  base=$(basename "$source")
+  name="${base%.*}"
+  ext="${base##*.}"
+  dest="$name.$ext.bkp"
+  i=1
+
+  while [[ -f "$dest" ]]; do
+    dest="$name.$ext.bkp$i"
+    ((i++))
+  done
+
+  cp "$source" "$dest"
+}
