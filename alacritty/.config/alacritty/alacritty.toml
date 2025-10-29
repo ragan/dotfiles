@@ -1,6 +1,21 @@
 [env]
 TERM = "xterm-256color"
 
+[terminal]
+osc52 = "CopyPaste"
+
+[window]
+opacity = 0.80
+blur = true
+
+[keyboard]
+bindings = [
+  { key = "H", mods = "Alt", chars = "\u001bh" },
+  { key = "J", mods = "Alt", chars = "\u001bj" },
+  { key = "K", mods = "Alt", chars = "\u001bk" },
+  { key = "L", mods = "Alt", chars = "\u001bl" },
+]
+
 [font]
 size = 18.0
 

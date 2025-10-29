@@ -131,3 +131,5 @@ bkp() {
 
   cp "$source" "$dest"
 }
+
+eval "$(starship init zsh)"
