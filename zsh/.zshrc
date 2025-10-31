@@ -102,9 +102,6 @@ alias rr='ranger'
 alias v='nvim'
 alias nv='v'
 
-if [ -z "$TMUX" ] && [ -n "$SSH_TTY" ]; then
-  tmux attach -t main || tmux new -s main
-fi
 
 # eval "$(oh-my-posh init zsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/catppuccin.omp.json)"
 eval "$(starship init zsh)"
@@ -149,8 +146,4 @@ aa() {
 # Check if nvim is available, otherwise alias nvim to vim
 if ! command -v nvim &> /dev/null; then
   alias nvim='vim'
-fi
-
-if [ -z "$TMUX" ]; then
-  tmux attach -t main || tmux new -s main
 fi
