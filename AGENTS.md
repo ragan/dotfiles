@@ -33,6 +33,39 @@ Personal configuration files (dotfiles) for Linux/macOS development environment 
 - Root dotfiles (`.zshrc`, `.tmux.conf`) go in `tool-name/` directory
 - Use GNU Stow for symlink management
 
+## Security Guidelines
+
+### Pre-Commit Sensitive Data Check
+**CRITICAL**: Always scan for sensitive data before committing. Run these checks:
+
+```bash
+# Search for common sensitive patterns
+rg -i "password|passwd|api_key|apikey|secret|token|private_key|credentials|bearer" --glob '!.git/*'
+
+# Search for cloud service credentials
+rg -i "aws_access_key|aws_secret|github_token|gh_token|ssh_key" --glob '!.git/*'
+
+# Find potential credential files
+find . -name "*.pem" -o -name "*.key" -o -name "*.env" -o -name "*_rsa" -o -name "*.p12" 2>/dev/null | grep -v ".git"
+
+# Check for tracked sensitive files
+git ls-files | rg -i "ssh|gpg|key|secret|password|credential"
+```
+
+### What Should NEVER Be Committed
+- SSH keys (`id_rsa`, `id_ed25519`, `*.pem`)
+- GPG private keys
+- API keys, tokens, or authentication credentials
+- `.env` files with secrets (already in `.gitignore`)
+- Email addresses or usernames (use placeholders in examples)
+- IP addresses or hostnames (use `localhost` or `example.com`)
+
+### Safe to Commit
+- Keyboard shortcuts and keybindings
+- Theme configurations and color schemes
+- Public configuration without credentials
+- Example configs with placeholder values
+
 ## Notes
 - No test suite (configuration repository)
 - `.gitignore` excludes: `.aider*`, `.env`, `lazy-lock.json`, `.venv`
