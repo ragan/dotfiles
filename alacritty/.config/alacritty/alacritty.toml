@@ -17,7 +17,7 @@ bindings = [
 ]
 
 [font]
-size = 18.0
+size = 20.0
 
 [font.normal]
 family = "FiraCode Nerd Font Mono"
