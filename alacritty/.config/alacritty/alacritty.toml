@@ -37,5 +37,5 @@ style = "Bold Italic"
 
 [general]
 import = [
-  "~/.config/alacritty/themes/themes/blood_moon.toml"
+  "~/.config/alacritty/themes/themes/cyber_punk_neon.toml"
 ]
