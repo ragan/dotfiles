@@ -8,6 +8,10 @@ osc52 = "CopyPaste"
 opacity = 0.75
 blur = true
 
+[window.dimensions]
+columns = 120
+lines = 38
+
 [keyboard]
 bindings = [
   { key = "H", mods = "Alt", chars = "\u001bh" },
