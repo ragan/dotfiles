@@ -147,3 +147,6 @@ aa() {
 if ! command -v nvim &> /dev/null; then
   alias nvim='vim'
 fi
+
+# opencode
+export PATH=/home/kpeek/.opencode/bin:$PATH
