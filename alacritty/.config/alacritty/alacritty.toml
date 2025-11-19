@@ -5,7 +5,7 @@ TERM = "xterm-256color"
 osc52 = "CopyPaste"
 
 [window]
-opacity = 0.75
+opacity = 0.95
 blur = true
 
 [window.dimensions]
@@ -13,7 +13,10 @@ columns = 120
 lines = 38
 
 [keyboard]
-bindings = []
+bindings = [
+  { key = "Right", mods = "Control", action = "None" },
+  { key = "Left", mods = "Control", action = "None" }
+]
 
 [font]
 size = 20.0
