@@ -1,54 +1,115 @@
 # Agent Guidelines for Dotfiles Repository
 
 ## Repository Overview
-Personal configuration files (dotfiles) for Linux/macOS development environment including nvim, i3, zsh, tmux, and other tools.
+Personal configuration files (dotfiles) for Linux/macOS development environment including nvim, i3, tmux, zsh, and other tools. Managed with GNU Stow for symlink management.
 
 ## Build/Deploy Commands
 - `make dump-keybindings` - Export Cinnamon keybindings to file
 - `make load-keybindings` - Import keybindings from file
 - `ansible-playbook ansible-home/.ansible/deploy-open-webui.yml -i ansible-home/.ansible/hosts.ini` - Deploy with Ansible
+- `stow tool-name` - Create symlinks for a specific tool configuration
+- `stow -D tool-name` - Remove symlinks for a specific tool configuration
+- `tmux source-file ~/.tmux.conf` - Reload tmux configuration
+- `nvim --headless "+Lazy! sync" +qa` - Update Neovim plugins without UI
+
+## Testing
+**No test suite** - This is a configuration repository. Testing is done by manual verification, starting new sessions, opening nvim to check LSP/plugin functionality, and sourcing shell configs.
 
 ## Code Style Guidelines
 
-### Lua (Neovim config)
-- Use tabs for indentation (shown in init.lua and plugin files)
-- Configure LSP servers via Mason and nvim-lspconfig
-- Import plugins in `nvim/.config/nvim/lua/plugins/` as separate module files
+### Lua (Neovim, Awesome WM, Yazi configs)
+**Indentation:** Use tabs for indentation
+**File Structure:**
+- nvim plugins: Each plugin in `nvim/.config/nvim/lua/plugins/plugin-name.lua`
 - Use `return {}` pattern for plugin specifications
-- Set leader key to space: `vim.g.mapleader = " "`
+```lua
+return {
+    {"author/plugin", config = function() ... end},
+}
+```
 
-### Shell Scripts
-- Use `#!/usr/bin/env bash` shebang
-- Follow standard bash best practices with proper quoting
-- Use long-form flags for readability where possible
+**Keybinding Pattern:**
+```lua
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+vim.g.mapleader = " "  -- Set before loading plugins
+```
 
-### Configuration Files
-- YAML: 2-space indentation (Ansible playbooks)
-- TOML: Used for Alacritty, Starship configs
-- Lua: Used for Neovim, Awesome WM, Yazi configs
+**Error Handling:** Use `pcall()` for safe module loading (see awesome/rc.lua). Wrap git/system calls in error checks:
+```lua
+if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({{ "Failed to clone lazy.nvim:\n", "ErrorMsg" }}, true, {})
+    os.exit(1)
+end
+```
+
+**LSP Configuration:**
+```lua
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+lspconfig.gopls.setup({
+    capabilities = capabilities,
+    filetypes = {"go", "gomod", "gowork", "gotmpl"},
+    settings = { completeUnimported = true, usePlaceholders = true },
+})
+```
+
+### Shell Scripts (Bash/Zsh)
+**Shebang:** Use `#!/usr/bin/env bash` or `#!/usr/bin/env sh`
+**Quoting:** Always quote variables to prevent word splitting
+**Exit on errors:** Use `set -euo pipefail` where appropriate
+
+**Tmux Config:**
+- Use `set -g` for global options, `set-window-option` or `setw` for window options
+- Use `bind-key` with descriptive comments
+- Conditional locale setting for WSL:
+```bash
+if-shell "locale -a | grep -q 'C.utf8'" "set-environment -g LANG C.utf8"
+```
+
+**Error Checking:**
+```bash
+if ! command -v docker &> /dev/null; then
+    echo "Docker not found"
+    exit 1
+fi
+```
+
+### Python (Ranger commands)
+**Imports:** Use standard import style with `from __future__ import` for Python 2/3 compatibility
+**Class Structure:** Use docstrings for command documentation, implement `execute()` and `tab()` methods
+```python
+class my_edit(Command):
+    """Documentation string visible in :c help"""
+    def execute(self):
+        if self.arg(1):
+            target_filename = self.rest(1)
+```
+
+### YAML (Ansible playbooks)
+**Indentation:** 2 spaces (strict)
+**Best Practices:** Use descriptive task names, `when:` for conditionals, `register:` to capture command output, `changed_when:` to control when tasks report changes
 
 ## File Organization
 - Each tool has its own directory matching stow structure
 - Config files go in `tool-name/.config/tool-name/`
 - Root dotfiles (`.zshrc`, `.tmux.conf`) go in `tool-name/` directory
 - Use GNU Stow for symlink management
+- Example: `nvim/.config/nvim/`, `tmux/.tmux.conf`, `zsh/.zshrc`
+
+## Naming Conventions
+- **Lua:** snake_case for variables/functions, PascalCase for classes
+- **Shell:** lowercase_with_underscores for functions and variables
+- **Python:** snake_case for variables/functions, PascalCase for classes
+- **tmux:** lowercase_with_underscores for options (@powerkit_option_name)
+- **File names:** lowercase with hyphens or underscores
 
 ## Security Guidelines
 
 ### Pre-Commit Sensitive Data Check
-**CRITICAL**: Always scan for sensitive data before committing. Run these checks:
-
+**CRITICAL:** Always scan for sensitive data before committing. Run these checks:
 ```bash
-# Search for common sensitive patterns
 rg -i "password|passwd|api_key|apikey|secret|token|private_key|credentials|bearer" --glob '!.git/*'
-
-# Search for cloud service credentials
 rg -i "aws_access_key|aws_secret|github_token|gh_token|ssh_key" --glob '!.git/*'
-
-# Find potential credential files
-find . -name "*.pem" -o -name "*.key" -o -name "*.env" -o -name "*_rsa" -o -name "*.p12" 2>/dev/null | grep -v ".git"
-
-# Check for tracked sensitive files
+find . -name "*.pem" -o -name "*.key" -o -name "*.env" -o -name "*_rsa" 2>/dev/null | grep -v ".git"
 git ls-files | rg -i "ssh|gpg|key|secret|password|credential"
 ```
 
@@ -66,7 +127,10 @@ git ls-files | rg -i "ssh|gpg|key|secret|password|credential"
 - Public configuration without credentials
 - Example configs with placeholder values
 
-## Notes
-- No test suite (configuration repository)
-- `.gitignore` excludes: `.aider*`, `.env`, `lazy-lock.json`, `.venv`
-- Primary editors: Neovim with LSP support for Go, Python, TypeScript, Rust, Bash, Lua, C/C++, Java, Zig
+## Platform-Specific Considerations
+- **WSL:** May need `C.utf8` locale instead of `en_US.UTF-8`
+- **macOS:** Separate zsh config in `zsh-macos/` directory
+- **Linux:** Use Linux-specific paths and tools
+
+## .gitignore
+Excluded files: `.aider*`, `.env`, `lazy-lock.json`, `.venv`
