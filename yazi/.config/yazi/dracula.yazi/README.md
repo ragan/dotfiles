@@ -14,6 +14,10 @@
 
 ```sh
 ya pkg add yazi-rs/flavors:dracula
+# Or use from dotfiles (already installed)
+# Simply set in ~/.config/yazi/yazi.toml:
+# [flavor]
+# use = "dracula"
 ```
 
 ## ⚙️ Usage

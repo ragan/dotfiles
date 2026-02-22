@@ -5,23 +5,15 @@ Personal configuration files for Linux/macOS development environment. Organized 
 ## Key Components
 
 ### Terminal & Shell
-- **Alacritty** - GPU-accelerated terminal with Catppuccin Mocha theme
-- **Kitty** - Alternative terminal with macOS-specific configuration
-- **Tmux** - Terminal multiplexer with tmux-powerkit and vim-tmux-navigator
+- **Alacritty** - GPU-accelerated terminal (Catppuccin themes available)
+- **Kitty** - Alternative terminal with macOS-specific configuration (Catppuccin Macchiato theme)
+- **Tmux** - Terminal multiplexer with tmux-powerkit and tmux-yank
   - Prefix: `Ctrl+a`
-  - Powerline status bar with Catppuccin theme
+  - Powerline status bar (theme configurable via @powerkit_theme)
   - Unicode glyph support (WSL-compatible)
+  - URL viewing with urlscan (`prefix + u`)
 - **Zsh** - Shell with Oh My Zsh, separate configs for macOS and Linux
-- **Starship** - Cross-shell prompt
-
-### Editor
-- **Neovim** - Configured with Lazy.nvim plugin manager
-  - Leader key: `Space`
-  - LSP support for Go, Python, TypeScript, Rust, Bash, Lua, C/C++, Java, Zig
-  - Git integration (fugitive, gitsigns)
-  - Completions, linting, debugging
-  - Telescope, Treesitter, Neo-tree
-  - Copilot, Claude integration
+- **Starship** - Cross-shell prompt (configured via eval in zshrc, no custom config files)
 
 ### Window Managers & Desktop
 - **i3** - Tiling window manager configuration
@@ -33,10 +25,10 @@ Personal configuration files for Linux/macOS development environment. Organized 
 
 ### Tools
 - **Ranger** - Terminal file manager with custom commands
-- **Yazi** - Modern terminal file manager with plugins
+- **Yazi** - Modern terminal file manager with plugins (multiple themes available: rose-pine, catppuccin-mocha, catppuccin-latte, dracula, tokyo-night, flexoki-light)
 - **Newsraft** - RSS reader
 - **Ulauncher** - Application launcher with Bitwarden/Firefox integration
-- **Autorandr** - Monitor profile management
+- **Autorandr** - Monitor profile management (stored as `autorandr-home-desktop`)
 - **Ansible** - Deployment automation (Open WebUI)
 
 ## Installation
@@ -45,6 +37,7 @@ Personal configuration files for Linux/macOS development environment. Organized 
 - GNU Stow
 - Git
 - Nerd Font (recommended: FiraCode Nerd Font, JetBrainsMono Nerd Font)
+- urlscan (for tmux URL viewing feature: `pacman -S urlscan` on Arch, `apt install urlscan` on Debian/Ubuntu)
 
 ### Setup
 
@@ -57,7 +50,7 @@ cd ~/dotfiles
 2. Use GNU Stow to symlink configurations:
 ```bash
 # Install specific configuration
-stow nvim
+stow tmux
 
 # Install multiple configurations
 stow tmux zsh alacritty
@@ -73,11 +66,9 @@ stow */
 
 4. Post-install:
 ```bash
-# Install Neovim plugins
-nvim --headless "+Lazy! sync" +qa
-
-# Install tmux plugins (press prefix+I to install)
+# Install tmux plugins
 tmux source-file ~/.tmux.conf
+# Then press Ctrl+a I to install plugins
 
 # Source shell config
 source ~/.zshrc
@@ -118,10 +109,9 @@ tool-name/
 ```
 
 Examples:
-- `nvim/.config/nvim/` - Neovim configuration
 - `tmux/.tmux.conf` - Tmux configuration
 - `zsh/.zshrc` - Zsh configuration
-- `alacritty/.config/alacritty/` - Alacritty configuration
+- `alacritty/.config/alacritty/alacritty.toml` - Alacritty configuration
 
 ## Troubleshooting
 
@@ -131,21 +121,24 @@ Examples:
 
 ### Tmux
 - **Plugins not loading**: Press `Ctrl+a` then `I` to install tmux plugins via TPM.
-- **Status line missing**: Check that tmux-powerkit is installed: `ls ~/.tmux/plugins/tmux-powerkit`
-
-### Neovim
-- **LSP not working**: Run `:Mason` to ensure language servers are installed.
-- **Plugin issues**: Run `:Lazy sync` to update/manage plugins.
+- **Status line missing**: Check that tmux-powerkit is installed:
+  ```bash
+  ls ~/.tmux/plugins/tmux-powerkit
+  # If not found:
+  cd ~/dotfiles && stow tmux && tmux source ~/.tmux.conf
+  # Then press Ctrl+a I to install plugins
+  ```
 
 ## Theme & Visuals
 
-Consistent **Catppuccin Mocha** color scheme across:
-- Alacritty/Kitty terminal
-- Tmux (via tmux-powerkit)
-- Neovim
-- Rofi
-- Polybar
-- Yazi (Dracula and Catppuccin variants available)
+Theme configurations across tools:
+- **Alacritty**: Catppuccin themes available (including Mocha, Macchiato)
+- **Kitty**: Catppuccin Macchiato theme
+- **Tmux**: tmux-powerkit (default theme, configurable via @powerkit_theme)
+- **Rofi**: Catppuccin Mocha theme
+- **Yazi**: Multiple flavors available (rose-pine, catppuccin-mocha, catppuccin-latte, dracula, tokyo-night, flexoki-light) - currently using rose-pine
+- **Awesome**: Default theme
+- **Polybar**: Custom configuration
 
 ## Contributing
 
@@ -158,8 +151,7 @@ When modifying configurations:
 
 ## Notes
 
-- Uses Catppuccin Mocha color scheme across multiple tools
-- Neovim uses space as leader key
 - Tmux prefix: `Ctrl+a`
 - FiraCode Nerd Font or JetBrainsMono Nerd Font recommended for proper icon rendering
 - Configuration files are designed to be portable across Linux/macOS systems
+- Theme consistency varies across tools - see "Theme & Visuals" section for details
