@@ -14,3 +14,9 @@ Zsh configuration with standard Oh My Zsh setup and platform-specific customizat
 
 - Use `zsh-macos/` directory for macOS-specific settings
 - Standard `zsh/` directory for Linux/WSL systems
+
+## Usage
+
+To use these configurations:
+1. Install Oh My Zsh
+2. Run `stow zsh` (for Linux/WSL) or `stow zsh-macos` (for macOS)
