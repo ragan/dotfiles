@@ -177,3 +177,6 @@ This repository is organized as a GNU Stow collection with each tool having its 
 - History settings in zsh are configured to prevent truncation and duplicate entries
 - Tmux plugins require manual installation with `Ctrl+a I` after reloading configuration 
 - All configurations are designed for reuse across different machines
+
+## Target Audience
+This repository is intended for experienced users who understand the tools and configuration concepts. README files are kept concise and focused on platform-specific differences rather than detailed explanations of basic functionality.
