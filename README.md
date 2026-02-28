@@ -24,12 +24,7 @@ Personal configuration files for Linux/macOS development environment. Organized 
 - **Picom** - Compositor
 
 ### Tools
-- **Ranger** - Terminal file manager with custom commands
-- **Yazi** - Modern terminal file manager with plugins (multiple themes available: rose-pine, catppuccin-mocha, catppuccin-latte, dracula, tokyo-night, flexoki-light)
-- **Newsraft** - RSS reader
-- **Ulauncher** - Application launcher with Bitwarden/Firefox integration
 - **Autorandr** - Monitor profile management (stored as `autorandr-home-desktop`)
-- **Ansible** - Deployment automation (Open WebUI)
 
 ## Installation
 
@@ -93,11 +88,7 @@ source ~/.zshrc
 # Awesome (requires restart)
 ```
 
-### Ansible Deployment
-```bash
-ansible-playbook ansible-home/.ansible/deploy-open-webui.yml \
-  -i ansible-home/.ansible/hosts.ini
-```
+
 
 ## Directory Structure
 
@@ -136,7 +127,6 @@ Theme configurations across tools:
 - **Kitty**: Catppuccin Macchiato theme
 - **Tmux**: tmux-powerkit (default theme, configurable via @powerkit_theme)
 - **Rofi**: Catppuccin Mocha theme
-- **Yazi**: Multiple flavors available (rose-pine, catppuccin-mocha, catppuccin-latte, dracula, tokyo-night, flexoki-light) - currently using rose-pine
 - **Awesome**: Default theme
 - **Polybar**: Custom configuration
 
