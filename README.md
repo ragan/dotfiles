@@ -13,6 +13,8 @@ Personal configuration files for Linux/macOS development environment. Organized 
   - Unicode glyph support (WSL-compatible)
   - URL viewing with urlscan (`prefix + u`)
 - **Zsh** - Shell with Oh My Zsh, separate configs for macOS and Linux
+  - `zsh/` - Standard Linux configuration
+  - `zsh-macos/` - macOS-specific configuration with platform-specific settings and tools
   - See [zsh/README.md](zsh/README.md) for detailed configuration information
 - **Starship** - Cross-shell prompt (configured via eval in zshrc, no custom config files)
 
