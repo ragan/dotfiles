@@ -16,12 +16,7 @@ Personal configuration files for Linux/macOS development environment. Organized 
 - **Starship** - Cross-shell prompt (configured via eval in zshrc, no custom config files)
 
 ### Window Managers & Desktop
-- **i3** - Tiling window manager configuration
-- **Awesome** - Lua-based window manager
-- **Polybar** - Status bar
 - **Rofi** - Application launcher with Catppuccin theme
-- **Dunst** - Notification daemon
-- **Picom** - Compositor
 
 ### Tools
 - **Autorandr** - Monitor profile management (stored as `autorandr-home-desktop`)
