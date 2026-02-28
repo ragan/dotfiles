@@ -112,3 +112,4 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 eval "$(starship init zsh)"
+eval "$(atuin init zsh)"
