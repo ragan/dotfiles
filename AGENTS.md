@@ -134,3 +134,46 @@ git ls-files | rg -i "ssh|gpg|key|secret|password|credential"
 
 ## .gitignore
 Excluded files: `.aider*`, `.env`, `lazy-lock.json`, `.venv`
+
+## Repository Structure
+This repository is organized as a GNU Stow collection with each tool having its own directory:
+
+- `zsh/` - Zsh shell configuration with Oh My Zsh
+- `zsh-macos/` - macOS-specific Zsh configuration
+- `tmux/` - Tmux terminal multiplexer configuration
+- `alacritty/` - Alacritty terminal configuration  
+- `kitty/` - Kitty terminal configuration
+- `kitty-mac/` - macOS-specific Kitty configuration
+- `i3/` - i3 window manager configuration
+- `awesome/` - Awesome window manager configuration
+- `polybar/` - Status bar configuration
+- `rofi/` - Application launcher configuration
+- `dunst/` - Notification daemon configuration
+- `ranger/` - Terminal file manager configuration
+- `yazi/` - Modern terminal file manager configuration
+- `newsraft/` - RSS reader configuration
+- `ansible-home/` - Ansible deployment automation
+- `autorandr-home-desktop/` - Monitor profile management
+- `ulauncher/` - Application launcher with extensions
+
+## Working with This Repository
+1. All configuration files are designed to be portable across Linux/macOS systems
+2. Use GNU Stow to deploy configurations: `stow tmux`, `stow zsh`
+3. For macOS systems, use `zsh-macos` and `kitty-mac` instead of `zsh` and `kitty`
+4. For WSL, ensure proper Nerd Font setup in Windows Terminal
+5. Keybinding management uses `make dump-keybindings` and `make load-keybindings` for Cinnamon desktop
+
+## Key Features and Tools
+- **Zsh**: Oh My Zsh with starship prompt
+- **Tmux**: Includes tmux-powerkit plugin with powerline status bar
+- **Alacritty**: GPU-accelerated terminal with Catppuccin themes
+- **Kitty**: Alternative terminal with Catppuccin themes
+- **i3**: Tiling window manager with configured keybindings
+- **Awesome**: Lua-based window manager
+- **Themes**: Consistent Catppuccin theming across most terminal tools
+- **Tools**: Ranger, Yazi, Rofi, Dunst, Ulauncher, Newsraft
+
+## Configuration Management  
+- History settings in zsh are configured to prevent truncation and duplicate entries
+- Tmux plugins require manual installation with `Ctrl+a I` after reloading configuration 
+- All configurations are designed for reuse across different machines
