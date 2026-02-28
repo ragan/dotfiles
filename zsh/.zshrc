@@ -103,4 +103,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
+# Remove duplicate entries from history
+setopt HIST_IGNORE_ALL_DUPS
+
+# Set large history size (100,000 commands) to avoid truncation
+HISTSIZE=100000
+SAVEHIST=100000
+
 eval "$(starship init zsh)"
