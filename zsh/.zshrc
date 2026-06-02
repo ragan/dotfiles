@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
+export OPENCODE_ENABLE_EXA=1
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -70,8 +72,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf wd)
 
+# Ollama completion plugin - command and model name completions
+# https://github.com/ollama/ollama/issues/1653#issuecomment-2516218197
+# git clone https://github.com/ocodo/ollama_zsh_completion/ ~/.oh-my-zsh/custom/plugins/ollama
+plugins=(git fzf wd dotenv taskwarrior tmux ollama)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -100,15 +105,11 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias nvim="~/nvim-macos-arm64/bin/nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# Remove duplicate entries from history
-setopt HIST_IGNORE_ALL_DUPS
-
-# Set large history size (100,000 commands) to avoid truncation
-HISTSIZE=100000
-SAVEHIST=100000
-
 eval "$(starship init zsh)"
+
+export PATH="$HOME/.docker/bin:$PATH"
