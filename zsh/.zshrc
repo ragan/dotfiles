@@ -113,3 +113,12 @@ alias nvim="~/nvim-macos-arm64/bin/nvim"
 eval "$(starship init zsh)"
 
 export PATH="$HOME/.docker/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kpeek/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
