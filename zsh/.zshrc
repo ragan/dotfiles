@@ -105,15 +105,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias nvim="~/nvim-macos-arm64/bin/nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-
-eval "$(starship init zsh)"
-
-export PATH="$HOME/.docker/bin:$PATH"
-
 
 # Load machine-specific configuration if it exists
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
