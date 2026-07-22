@@ -114,11 +114,7 @@ eval "$(starship init zsh)"
 
 export PATH="$HOME/.docker/bin:$PATH"
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/kpeek/.lmstudio/bin"
-# End of LM Studio CLI section
 
+# Load machine-specific configuration if it exists
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh)"
