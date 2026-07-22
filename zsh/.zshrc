@@ -73,10 +73,14 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
+plugins=(git fzf wd dotenv taskwarrior tmux)
+
 # Ollama completion plugin - command and model name completions
 # https://github.com/ollama/ollama/issues/1653#issuecomment-2516218197
 # git clone https://github.com/ocodo/ollama_zsh_completion/ ~/.oh-my-zsh/custom/plugins/ollama
-plugins=(git fzf wd dotenv taskwarrior tmux ollama)
+if [[ -d "$ZSH/custom/plugins/ollama" ]]; then
+    plugins+=(ollama)
+fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
